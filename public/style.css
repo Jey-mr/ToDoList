@@ -1,0 +1,74 @@
+#thing{
+    width: 250px;
+}
+
+#description{
+    width: 250px;
+}
+
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.container{
+    padding-left: 10%;
+    padding-top: 5%;
+    padding-right: 30%;
+    width: 60%;
+    background: plum;
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.things{
+    display: flex;
+}
+ 
+.paragraphs{
+    width: 64%;
+    margin-top: 8px;
+    margin-right: 2%;
+    margin-left: 4%;
+    font-size: 1.25rem;
+    font-weight: 100;
+}
+
+.headings{
+    width: 30%;
+    display: flex;
+    gap: 10px;
+    background: lightblue;
+}
+
+h3{
+    font-size: 1.5rem;
+    font-weight: 530;
+}
+
+.first{
+    display: flex;
+    flex-direction: column; 
+}
+
+@media(max-width: 992px){
+    .container{
+        padding-left: 5%;
+        padding-top: 5%;
+        padding-right: 5%;
+        width: 90%;
+    }
+}
+
+@media(max-width: 768px){
+    .things{
+        flex-direction: column;
+    }
+
+    .headings{
+        width: 100%;
+    }
+}

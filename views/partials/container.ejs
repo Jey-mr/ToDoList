@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Things To Do..</h2>
+    <hr style="border: 1px solid dimgray;"/>
+    <% if(locals.things){ %>
+      <div class="first">
+      <% for(var i=0; i<things.length; i++){ %>
+        <div class="things thing<%=i%>">
+          <div class="headings heading<%=i%>"><h3 class="no"><%= i+1%>.</h3><h3 class="work"><%= things[i] %></h3></div>
+          <% if(check[i] !== -1){ %>
+            <div class="paragraphs paragraph<%=i%>"><p><%= descriptions[check[i]] %></p></div>
+          <% } %>
+        </div>
+      <% } %>
+      </div>
+    <% } %>
+
+    <% if(!locals.interface && !locals.describe){ %>
+      <div class="second">
+        <form action="/add" method="POST">
+            <input type="text" id="thing" name="thing" placeholder="things" required>
+            <br />
+            <textarea id="description" placeholder="description (optional)" name="description" rows="3" cols="23"></textarea>
+            <input type="submit" value="Add">
+        </form>
+      </div>
+    <% } %>
+  </div>
