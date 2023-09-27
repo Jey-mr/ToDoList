@@ -7,14 +7,14 @@ const port = 3000;
 var things = [];        
 var check = [];      
 var descriptions = [];
- 
+  
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res)=>{   
     res.render("index.ejs");      
 });      
     
-app.post("/add", (req, res)=>{ 
+app.post("/add", (req, res)=>{  
  
     var description = req.body["description"]; 
   
