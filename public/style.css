@@ -1,9 +1,9 @@
 #thing{
-    width: 250px;
+    width: 255px;
 }
 
 #description{
-    width: 250px;
+    width: 255px;
 }
 
 body{
@@ -27,6 +27,11 @@ h2{
 .things{
     display: flex;
 }
+
+input[type="checkbox"]{
+    width: 100%;
+    height: 100%;
+}
  
 .paragraphs{
     width: 64%;
@@ -38,11 +43,13 @@ h2{
 }
 
 .headings{
-    width: 28%;
-    padding-left: 2%;
+    width: 29%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding-left: 1%;
     display: flex;
-    gap: 10px;
-    background: lightblue;
+    gap: 20px;
+    background: #DA70D6;
 }
 
 h3{

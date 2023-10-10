@@ -5,35 +5,42 @@ const app = express();
 const port = 3000;
   
 var things = [];        
-var check = [];      
+var map = [];      
 var descriptions = [];
   
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.get("/", (req, res)=>{   
+
+app.get("/", (req, res)=>{  
     res.render("index.ejs");      
 });      
     
-app.post("/add", (req, res)=>{  
- 
+app.post("/add", (req, res)=>{   
     var description = req.body["description"]; 
-  
     things.push(req.body["thing"]);  
  
     if(description.length > 0){
-        check.push(descriptions.length); 
+        map.push(descriptions.length); 
         descriptions.push(description); 
     }  
     else{      
-        check.push(-1);
+        map.push(-1);
     }  
+
+    console.log(req.body);
        
     res.render("index.ejs", {
         things: things,
         descriptions: descriptions, 
-        check: check,
+        map: map
     });   
-});    
+});     
+
+app.post("/check", (req, res)=>{
+    console.log("it is coming here");
+    console.log(req.body["strike"]);
+    res.render("index.ejs");
+}); 
 
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}.`);
