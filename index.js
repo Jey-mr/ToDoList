@@ -36,12 +36,6 @@ app.post("/add", (req, res)=>{
     });   
 });     
 
-app.post("/check", (req, res)=>{
-    console.log("it is coming here");
-    console.log(req.body["strike"]);
-    res.render("index.ejs");
-}); 
-
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}.`);
 });    
